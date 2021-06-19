@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Chatto</string>
+    <string name="find_users_nearby">Find users nearby</string>
+    <string name="write_a_message">Write message here</string>
 </resources>
