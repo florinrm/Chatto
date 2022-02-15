@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="homeViewModel"
+            type="com.example.chatto.viewmodel.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".activities.HomeActivity">
+
+        <EditText
+            android:id="@+id/editText_advertising"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:focusable="false"
+            android:inputType="none"
+            android:text="@string/edit_text_advertising"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/recycleViewDevices"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_advertising_home"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:checked="false"
+            android:focusable="false"
+            app:layout_constraintStart_toEndOf="@+id/editText_advertising"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_discovering"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="24dp"
+            android:focusable="false"
+            android:inputType="none"
+            android:text="@string/edit_text_discovering"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_advertising"
+            app:layout_constraintEnd_toStartOf="@+id/switch_discovery_home"
+            app:layout_constraintTop_toTopOf="@+id/editText_advertising"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_discovery_home"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="20dp"
+            android:checked="false"
+            android:onClick="@{() -> homeViewModel.onSwitchDiscovery()}"
+            app:layout_constraintBottom_toBottomOf="@+id/switch_advertising_home"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/switch_advertising_home"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewDevices"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="96dp"
+            android:onClick="@{() -> homeViewModel.onSwitchAdvertising()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switch_discovery_home" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reset_device_discover_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_device_discover"
+            style="@style/Widget.Chatto.Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycleViewDevices" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -2,4 +2,19 @@
     <string name="app_name">Chatto</string>
     <string name="find_users_nearby">Find users nearby</string>
     <string name="write_a_message">Write message here</string>
+    <string name="edit_text_advertising">Discovered device</string>
+    <string name="edit_text_discovering">Discovering</string>
+    <string name="item_username">User:</string>
+    <string name="item_deviceName">Device:</string>
+    <string name="input">input</string>
+    <string name="item_connected">Connected</string>
+    <string name="message_sent">Message sent</string>
+    <string name="dummy_hour">23:59</string>
+    <string name="hola">Hola!</string>
+    <string name="deadline">23:59</string>
+    <string name="received_message">Received message</string>
+    <string name="dummy_user">Florin Mihalache</string>
+    <string name="send">Send</string>
+    <string name="enter_message">Enter message</string>
+    <string name="reset_device_discover">Reset device discover</string>
 </resources>
